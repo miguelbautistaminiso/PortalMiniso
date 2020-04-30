@@ -1,0 +1,58 @@
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PortalMiniso.SiteMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <!-- Meta tags and CSS reference needed for bootstrap -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <title>Registro de plantillas</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="padding-top: 70px;">
+    <form id="form1" runat="server">
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-light fixed-top bg-transparent">
+            <div class="text-center">
+                
+                <a class="navbar-brand" style="font-size" href="#"><img src="images/miniso.png" width="80" height="40"> Registro Plantillas</a>
+                
+            </div>
+            <div class="text-right">
+                <asp:Button ID="ButtonCerrar" runat="server" Text="Cerrar sesión" CssClass="btn btn-outline-danger" OnClick="ButtonCerrar_Click" />
+            </div>
+            <!--
+            <button class="navbar-toggler collapsed text-right pb-3" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            -->
+            <!--
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="navbar-nav mr-auto text-right">
+                    <li class="nav-item active"><a class="nav-link" href="/Default.aspx">Home</a></li>
+                </ul>
+            </div>
+                -->
+            <!--/.nav-collapse -->
+        </nav>
+
+        <div class="container body-content pt-2">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer class="text-center">
+                <p>Miniso Perú. Todos los derechos reservados &copy; <%: DateTime.Now.Year %> </p>
+            </footer>
+        </div>
+    </form>
+
+    <!-- jQuery and Bootstrap JS files -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

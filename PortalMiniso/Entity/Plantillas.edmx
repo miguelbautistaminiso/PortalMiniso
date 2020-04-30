@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PlantillasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CUENTAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENDER_ID" Type="int" Nullable="false" />
+          <Property Name="TENDER_NAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TENDER_DESC" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TENDER_TYPE_CODE" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="MIN_UNIT_AMOUNT" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="COUNTABLE_FLG" Type="int" Nullable="false" />
+          <Property Name="CURRENCY_CODE" Type="varchar" MaxLength="255" />
+          <Property Name="CARD_SCHEME" Type="varchar" MaxLength="255" />
+          <Property Name="CERT_TYPE_NO" Type="varchar" MaxLength="255" />
+          <Property Name="ACOUNT" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EMPLOYEE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPLOYEE_NO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CONTRASENA" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INV">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocNum" Type="int" />
+          <Property Name="LineNum" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Quantity" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Price" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Currency" Type="varchar" MaxLength="255" />
+          <Property Name="Rate" Type="varchar" MaxLength="255" />
+          <Property Name="U_MNSO_ValorDsco" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="WhsCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CodeBars" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaxCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LineTotal" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PriceBefDi" Type="varchar" MaxLength="255" />
+          <Property Name="OcrCode" Type="varchar" MaxLength="255" />
+          <Property Name="OcrCode2" Type="varchar" MaxLength="255" />
+          <Property Name="OcrCode3" Type="varchar" MaxLength="255" />
+          <Property Name="OcrCode4" Type="varchar" MaxLength="255" />
+          <Property Name="OcrCode5" Type="varchar" MaxLength="255" />
+          <Property Name="NCMCode" Type="varchar" MaxLength="255" />
+          <Property Name="UomCode" Type="varchar" MaxLength="255" />
+          <Property Name="U_tipoOpT12" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_OPER" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_SUJETORENTA" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaxOnly" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INV2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocNum" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LineNum" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ExpnsCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LineTotal" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaxCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="campo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="SKU" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OINV">
+          <Key>
+            <PropertyRef Name="DocNum" />
+          </Key>
+          <Property Name="DocNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocEntry" Type="varchar" MaxLength="255" />
+          <Property Name="DocType" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocDate" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaxDate" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocDueDate" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CardCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocCur" Type="varchar" MaxLength="255" />
+          <Property Name="DocRate" Type="varchar" MaxLength="255" />
+          <Property Name="LicTradNum" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="comments" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocSubType" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="NumAtCard" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_OPER" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_MDTD" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPV_SERI" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPV_NCON2" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_MDSD" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_MDCD" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_TDOCORG" Type="varchar" MaxLength="255" />
+          <Property Name="U_BPP_MDTO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_MDSO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_MDCO" Type="varchar" MaxLength="255" />
+          <Property Name="U_BPP_SDOCTOTAL" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_SDOCDATE" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_SDOCTC" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_APTOS_TPO_DOCTO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_APTOS_FOLIO_ENICO" Type="varchar" MaxLength="255" />
+          <Property Name="U_APTOS_FECHAEMISION" Type="varchar" MaxLength="255" />
+          <Property Name="U_APTOS_HORAEMISION" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_APTOS_COD_VENDEDOR" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_APTOS_NUM_TERMINAL" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_APTOS_MOTIVOCANCELA" Type="varchar" MaxLength="255" />
+          <Property Name="DocTotal" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORIN">
+          <Key>
+            <PropertyRef Name="DocNum" />
+          </Key>
+          <Property Name="DocNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocEntry" Type="varchar" MaxLength="255" />
+          <Property Name="DocType" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocDate" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaxDate" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocDueDate" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CardCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocCur" Type="varchar" MaxLength="255" />
+          <Property Name="DocRate" Type="varchar" MaxLength="255" />
+          <Property Name="LicTradNum" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="comments" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocSubType" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="NumAtCard" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_OPER" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_MDTD" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPV_SERI" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPV_NCON2" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_MDSD" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_MDCD" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_TDOCORG" Type="varchar" MaxLength="255" />
+          <Property Name="U_BPP_MDTO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_MDSO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_MDCO" Type="varchar" MaxLength="255" />
+          <Property Name="U_BPP_SDOCTOTAL" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_SDOCDATE" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_SDOCTC" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_APTOS_TPO_DOCTO" Type="varchar" MaxLength="255" />
+          <Property Name="U_APTOS_FOLIO_ENICO" Type="varchar" MaxLength="255" />
+          <Property Name="U_APTOS_FECHAEMISION" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_APTOS_HORAEMISION" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_APTOS_COD_VENDEDOR" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_APTOS_NUM_TERMINAL" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_APTOS_MOTIVOCANCELA" Type="varchar" MaxLength="255" />
+          <Property Name="DocTotal" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RCT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocNum1" Type="int" />
+          <Property Name="DoCNum" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LineNum" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocEntry" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="SumApplied" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="InvType" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocNum" Type="int" />
+          <Property Name="LineNum" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Quantity" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Price" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Currency" Type="varchar" MaxLength="255" />
+          <Property Name="Rate" Type="varchar" MaxLength="255" />
+          <Property Name="U_MNSO_ValorDsco" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="WhsCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CodeBars" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaxCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LineTotal" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PriceBefDi" Type="varchar" MaxLength="255" />
+          <Property Name="OcrCode" Type="varchar" MaxLength="255" />
+          <Property Name="OcrCode2" Type="varchar" MaxLength="255" />
+          <Property Name="OcrCode3" Type="varchar" MaxLength="255" />
+          <Property Name="OcrCode4" Type="varchar" MaxLength="255" />
+          <Property Name="OcrCode5" Type="varchar" MaxLength="255" />
+          <Property Name="NCMCode" Type="varchar" MaxLength="255" />
+          <Property Name="UomCode" Type="varchar" MaxLength="255" />
+          <Property Name="U_tipoOpT12" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_OPER" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="U_BPP_SUJETORENTA" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaxOnly" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VPM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocNum1" Type="int" />
+          <Property Name="DoCNum" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LineNum" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocEntry" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="SumApplied" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="InvType" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__INV__DocNum__4222D4EF">
+          <End Role="OINV" Type="Self.OINV" Multiplicity="0..1" />
+          <End Role="INV" Type="Self.INV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OINV">
+              <PropertyRef Name="DocNum" />
+            </Principal>
+            <Dependent Role="INV">
+              <PropertyRef Name="DocNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RCT__DocNum1__5CD6CB2B">
+          <End Role="OINV" Type="Self.OINV" Multiplicity="0..1" />
+          <End Role="RCT" Type="Self.RCT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OINV">
+              <PropertyRef Name="DocNum" />
+            </Principal>
+            <Dependent Role="RCT">
+              <PropertyRef Name="DocNum1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RIN__DocNum__4D94879B">
+          <End Role="ORIN" Type="Self.ORIN" Multiplicity="0..1" />
+          <End Role="RIN" Type="Self.RIN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORIN">
+              <PropertyRef Name="DocNum" />
+            </Principal>
+            <Dependent Role="RIN">
+              <PropertyRef Name="DocNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VPM__DocNum1__5FB337D6">
+          <End Role="ORIN" Type="Self.ORIN" Multiplicity="0..1" />
+          <End Role="VPM" Type="Self.VPM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORIN">
+              <PropertyRef Name="DocNum" />
+            </Principal>
+            <Dependent Role="VPM">
+              <PropertyRef Name="DocNum1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PlantillasModelStoreContainer">
+          <EntitySet Name="CUENTAS" EntityType="Self.CUENTAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLOYEE" EntityType="Self.EMPLOYEE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INV" EntityType="Self.INV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INV2" EntityType="Self.INV2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OINV" EntityType="Self.OINV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORIN" EntityType="Self.ORIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RCT" EntityType="Self.RCT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RIN" EntityType="Self.RIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VPM" EntityType="Self.VPM" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__INV__DocNum__4222D4EF" Association="Self.FK__INV__DocNum__4222D4EF">
+            <End Role="OINV" EntitySet="OINV" />
+            <End Role="INV" EntitySet="INV" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RCT__DocNum1__5CD6CB2B" Association="Self.FK__RCT__DocNum1__5CD6CB2B">
+            <End Role="OINV" EntitySet="OINV" />
+            <End Role="RCT" EntitySet="RCT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RIN__DocNum__4D94879B" Association="Self.FK__RIN__DocNum__4D94879B">
+            <End Role="ORIN" EntitySet="ORIN" />
+            <End Role="RIN" EntitySet="RIN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VPM__DocNum1__5FB337D6" Association="Self.FK__VPM__DocNum1__5FB337D6">
+            <End Role="ORIN" EntitySet="ORIN" />
+            <End Role="VPM" EntitySet="VPM" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PlantillasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CUENTAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENDER_ID" Type="Int32" Nullable="false" />
+          <Property Name="TENDER_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENDER_DESC" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENDER_TYPE_CODE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MIN_UNIT_AMOUNT" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="COUNTABLE_FLG" Type="Int32" Nullable="false" />
+          <Property Name="CURRENCY_CODE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CARD_SCHEME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CERT_TYPE_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ACOUNT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EMPLOYEE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPLOYEE_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTRASENA" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INV">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocNum" Type="Int32" />
+          <Property Name="LineNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Currency" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Rate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_MNSO_ValorDsco" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WhsCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodeBars" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LineTotal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PriceBefDi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OcrCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OcrCode2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OcrCode3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OcrCode4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OcrCode5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NCMCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UomCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_tipoOpT12" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_OPER" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_SUJETORENTA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxOnly" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="OINV" Relationship="Self.FK__INV__DocNum__4222D4EF" FromRole="INV" ToRole="OINV" />
+        </EntityType>
+        <EntityType Name="INV2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LineNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ExpnsCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LineTotal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="campo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SKU" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OINV">
+          <Key>
+            <PropertyRef Name="DocNum" />
+          </Key>
+          <Property Name="DocNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocEntry" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocDate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxDate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocDueDate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CardCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocCur" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocRate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LicTradNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocSubType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumAtCard" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_OPER" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_MDTD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPV_SERI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPV_NCON2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_MDSD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_MDCD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_TDOCORG" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_BPP_MDTO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_MDSO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_MDCO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_BPP_SDOCTOTAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_SDOCDATE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_SDOCTC" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_APTOS_TPO_DOCTO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_APTOS_FOLIO_ENICO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_APTOS_FECHAEMISION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_APTOS_HORAEMISION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_APTOS_COD_VENDEDOR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_APTOS_NUM_TERMINAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_APTOS_MOTIVOCANCELA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocTotal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="INV" Relationship="Self.FK__INV__DocNum__4222D4EF" FromRole="OINV" ToRole="INV" />
+          <NavigationProperty Name="RCT" Relationship="Self.FK__RCT__DocNum1__5CD6CB2B" FromRole="OINV" ToRole="RCT" />
+        </EntityType>
+        <EntityType Name="ORIN">
+          <Key>
+            <PropertyRef Name="DocNum" />
+          </Key>
+          <Property Name="DocNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocEntry" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocDate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxDate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocDueDate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CardCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocCur" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocRate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LicTradNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocSubType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumAtCard" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_OPER" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_MDTD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPV_SERI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPV_NCON2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_MDSD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_MDCD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_TDOCORG" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_BPP_MDTO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_MDSO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_MDCO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_BPP_SDOCTOTAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_SDOCDATE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_SDOCTC" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_APTOS_TPO_DOCTO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_APTOS_FOLIO_ENICO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_APTOS_FECHAEMISION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_APTOS_HORAEMISION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_APTOS_COD_VENDEDOR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_APTOS_NUM_TERMINAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_APTOS_MOTIVOCANCELA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocTotal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="RIN" Relationship="Self.FK__RIN__DocNum__4D94879B" FromRole="ORIN" ToRole="RIN" />
+          <NavigationProperty Name="VPM" Relationship="Self.FK__VPM__DocNum1__5FB337D6" FromRole="ORIN" ToRole="VPM" />
+        </EntityType>
+        <EntityType Name="RCT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocNum1" Type="Int32" />
+          <Property Name="DoCNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LineNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocEntry" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SumApplied" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InvType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="OINV" Relationship="Self.FK__RCT__DocNum1__5CD6CB2B" FromRole="RCT" ToRole="OINV" />
+        </EntityType>
+        <EntityType Name="RIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocNum" Type="Int32" />
+          <Property Name="LineNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ItemCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Currency" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Rate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_MNSO_ValorDsco" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WhsCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodeBars" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LineTotal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PriceBefDi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OcrCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OcrCode2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OcrCode3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OcrCode4" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OcrCode5" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NCMCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UomCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="U_tipoOpT12" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_OPER" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="U_BPP_SUJETORENTA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaxOnly" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ORIN" Relationship="Self.FK__RIN__DocNum__4D94879B" FromRole="RIN" ToRole="ORIN" />
+        </EntityType>
+        <EntityType Name="VPM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocNum1" Type="Int32" />
+          <Property Name="DoCNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LineNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocEntry" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SumApplied" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InvType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ORIN" Relationship="Self.FK__VPM__DocNum1__5FB337D6" FromRole="VPM" ToRole="ORIN" />
+        </EntityType>
+        <Association Name="FK__INV__DocNum__4222D4EF">
+          <End Role="OINV" Type="Self.OINV" Multiplicity="0..1" />
+          <End Role="INV" Type="Self.INV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OINV">
+              <PropertyRef Name="DocNum" />
+            </Principal>
+            <Dependent Role="INV">
+              <PropertyRef Name="DocNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RCT__DocNum1__5CD6CB2B">
+          <End Role="OINV" Type="Self.OINV" Multiplicity="0..1" />
+          <End Role="RCT" Type="Self.RCT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OINV">
+              <PropertyRef Name="DocNum" />
+            </Principal>
+            <Dependent Role="RCT">
+              <PropertyRef Name="DocNum1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RIN__DocNum__4D94879B">
+          <End Role="ORIN" Type="Self.ORIN" Multiplicity="0..1" />
+          <End Role="RIN" Type="Self.RIN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORIN">
+              <PropertyRef Name="DocNum" />
+            </Principal>
+            <Dependent Role="RIN">
+              <PropertyRef Name="DocNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VPM__DocNum1__5FB337D6">
+          <End Role="ORIN" Type="Self.ORIN" Multiplicity="0..1" />
+          <End Role="VPM" Type="Self.VPM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORIN">
+              <PropertyRef Name="DocNum" />
+            </Principal>
+            <Dependent Role="VPM">
+              <PropertyRef Name="DocNum1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PlantillasEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CUENTAS" EntityType="Self.CUENTAS" />
+          <EntitySet Name="EMPLOYEE" EntityType="Self.EMPLOYEE" />
+          <EntitySet Name="INV" EntityType="Self.INV" />
+          <EntitySet Name="INV2" EntityType="Self.INV2" />
+          <EntitySet Name="OINV" EntityType="Self.OINV" />
+          <EntitySet Name="ORIN" EntityType="Self.ORIN" />
+          <EntitySet Name="RCT" EntityType="Self.RCT" />
+          <EntitySet Name="RIN" EntityType="Self.RIN" />
+          <EntitySet Name="VPM" EntityType="Self.VPM" />
+          <AssociationSet Name="FK__INV__DocNum__4222D4EF" Association="Self.FK__INV__DocNum__4222D4EF">
+            <End Role="OINV" EntitySet="OINV" />
+            <End Role="INV" EntitySet="INV" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RCT__DocNum1__5CD6CB2B" Association="Self.FK__RCT__DocNum1__5CD6CB2B">
+            <End Role="OINV" EntitySet="OINV" />
+            <End Role="RCT" EntitySet="RCT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RIN__DocNum__4D94879B" Association="Self.FK__RIN__DocNum__4D94879B">
+            <End Role="ORIN" EntitySet="ORIN" />
+            <End Role="RIN" EntitySet="RIN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VPM__DocNum1__5FB337D6" Association="Self.FK__VPM__DocNum1__5FB337D6">
+            <End Role="ORIN" EntitySet="ORIN" />
+            <End Role="VPM" EntitySet="VPM" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PlantillasModelStoreContainer" CdmEntityContainer="PlantillasEntities3">
+          <EntitySetMapping Name="CUENTAS">
+            <EntityTypeMapping TypeName="PlantillasModel.CUENTAS">
+              <MappingFragment StoreEntitySet="CUENTAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TENDER_ID" ColumnName="TENDER_ID" />
+                <ScalarProperty Name="TENDER_NAME" ColumnName="TENDER_NAME" />
+                <ScalarProperty Name="TENDER_DESC" ColumnName="TENDER_DESC" />
+                <ScalarProperty Name="TENDER_TYPE_CODE" ColumnName="TENDER_TYPE_CODE" />
+                <ScalarProperty Name="MIN_UNIT_AMOUNT" ColumnName="MIN_UNIT_AMOUNT" />
+                <ScalarProperty Name="COUNTABLE_FLG" ColumnName="COUNTABLE_FLG" />
+                <ScalarProperty Name="CURRENCY_CODE" ColumnName="CURRENCY_CODE" />
+                <ScalarProperty Name="CARD_SCHEME" ColumnName="CARD_SCHEME" />
+                <ScalarProperty Name="CERT_TYPE_NO" ColumnName="CERT_TYPE_NO" />
+                <ScalarProperty Name="ACOUNT" ColumnName="ACOUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLOYEE">
+            <EntityTypeMapping TypeName="PlantillasModel.EMPLOYEE">
+              <MappingFragment StoreEntitySet="EMPLOYEE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EMPLOYEE_NO" ColumnName="EMPLOYEE_NO" />
+                <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INV">
+            <EntityTypeMapping TypeName="PlantillasModel.INV">
+              <MappingFragment StoreEntitySet="INV">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="LineNum" ColumnName="LineNum" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="U_MNSO_ValorDsco" ColumnName="U_MNSO_ValorDsco" />
+                <ScalarProperty Name="WhsCode" ColumnName="WhsCode" />
+                <ScalarProperty Name="CodeBars" ColumnName="CodeBars" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="LineTotal" ColumnName="LineTotal" />
+                <ScalarProperty Name="PriceBefDi" ColumnName="PriceBefDi" />
+                <ScalarProperty Name="OcrCode" ColumnName="OcrCode" />
+                <ScalarProperty Name="OcrCode2" ColumnName="OcrCode2" />
+                <ScalarProperty Name="OcrCode3" ColumnName="OcrCode3" />
+                <ScalarProperty Name="OcrCode4" ColumnName="OcrCode4" />
+                <ScalarProperty Name="OcrCode5" ColumnName="OcrCode5" />
+                <ScalarProperty Name="NCMCode" ColumnName="NCMCode" />
+                <ScalarProperty Name="UomCode" ColumnName="UomCode" />
+                <ScalarProperty Name="U_tipoOpT12" ColumnName="U_tipoOpT12" />
+                <ScalarProperty Name="U_BPP_OPER" ColumnName="U_BPP_OPER" />
+                <ScalarProperty Name="U_BPP_SUJETORENTA" ColumnName="U_BPP_SUJETORENTA" />
+                <ScalarProperty Name="TaxOnly" ColumnName="TaxOnly" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INV2">
+            <EntityTypeMapping TypeName="PlantillasModel.INV2">
+              <MappingFragment StoreEntitySet="INV2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="LineNum" ColumnName="LineNum" />
+                <ScalarProperty Name="ExpnsCode" ColumnName="ExpnsCode" />
+                <ScalarProperty Name="LineTotal" ColumnName="LineTotal" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="campo" ColumnName="campo" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OINV">
+            <EntityTypeMapping TypeName="PlantillasModel.OINV">
+              <MappingFragment StoreEntitySet="OINV">
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="DocEntry" ColumnName="DocEntry" />
+                <ScalarProperty Name="DocType" ColumnName="DocType" />
+                <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+                <ScalarProperty Name="TaxDate" ColumnName="TaxDate" />
+                <ScalarProperty Name="DocDueDate" ColumnName="DocDueDate" />
+                <ScalarProperty Name="CardCode" ColumnName="CardCode" />
+                <ScalarProperty Name="DocCur" ColumnName="DocCur" />
+                <ScalarProperty Name="DocRate" ColumnName="DocRate" />
+                <ScalarProperty Name="LicTradNum" ColumnName="LicTradNum" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="DocSubType" ColumnName="DocSubType" />
+                <ScalarProperty Name="NumAtCard" ColumnName="NumAtCard" />
+                <ScalarProperty Name="U_BPP_OPER" ColumnName="U_BPP_OPER" />
+                <ScalarProperty Name="U_BPP_MDTD" ColumnName="U_BPP_MDTD" />
+                <ScalarProperty Name="U_BPV_SERI" ColumnName="U_BPV_SERI" />
+                <ScalarProperty Name="U_BPV_NCON2" ColumnName="U_BPV_NCON2" />
+                <ScalarProperty Name="U_BPP_MDSD" ColumnName="U_BPP_MDSD" />
+                <ScalarProperty Name="U_BPP_MDCD" ColumnName="U_BPP_MDCD" />
+                <ScalarProperty Name="U_BPP_TDOCORG" ColumnName="U_BPP_TDOCORG" />
+                <ScalarProperty Name="U_BPP_MDTO" ColumnName="U_BPP_MDTO" />
+                <ScalarProperty Name="U_BPP_MDSO" ColumnName="U_BPP_MDSO" />
+                <ScalarProperty Name="U_BPP_MDCO" ColumnName="U_BPP_MDCO" />
+                <ScalarProperty Name="U_BPP_SDOCTOTAL" ColumnName="U_BPP_SDOCTOTAL" />
+                <ScalarProperty Name="U_BPP_SDOCDATE" ColumnName="U_BPP_SDOCDATE" />
+                <ScalarProperty Name="U_BPP_SDOCTC" ColumnName="U_BPP_SDOCTC" />
+                <ScalarProperty Name="U_APTOS_TPO_DOCTO" ColumnName="U_APTOS_TPO_DOCTO" />
+                <ScalarProperty Name="U_APTOS_FOLIO_ENICO" ColumnName="U_APTOS_FOLIO_ENICO" />
+                <ScalarProperty Name="U_APTOS_FECHAEMISION" ColumnName="U_APTOS_FECHAEMISION" />
+                <ScalarProperty Name="U_APTOS_HORAEMISION" ColumnName="U_APTOS_HORAEMISION" />
+                <ScalarProperty Name="U_APTOS_COD_VENDEDOR" ColumnName="U_APTOS_COD_VENDEDOR" />
+                <ScalarProperty Name="U_APTOS_NUM_TERMINAL" ColumnName="U_APTOS_NUM_TERMINAL" />
+                <ScalarProperty Name="U_APTOS_MOTIVOCANCELA" ColumnName="U_APTOS_MOTIVOCANCELA" />
+                <ScalarProperty Name="DocTotal" ColumnName="DocTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORIN">
+            <EntityTypeMapping TypeName="PlantillasModel.ORIN">
+              <MappingFragment StoreEntitySet="ORIN">
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="DocEntry" ColumnName="DocEntry" />
+                <ScalarProperty Name="DocType" ColumnName="DocType" />
+                <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+                <ScalarProperty Name="TaxDate" ColumnName="TaxDate" />
+                <ScalarProperty Name="DocDueDate" ColumnName="DocDueDate" />
+                <ScalarProperty Name="CardCode" ColumnName="CardCode" />
+                <ScalarProperty Name="DocCur" ColumnName="DocCur" />
+                <ScalarProperty Name="DocRate" ColumnName="DocRate" />
+                <ScalarProperty Name="LicTradNum" ColumnName="LicTradNum" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="DocSubType" ColumnName="DocSubType" />
+                <ScalarProperty Name="NumAtCard" ColumnName="NumAtCard" />
+                <ScalarProperty Name="U_BPP_OPER" ColumnName="U_BPP_OPER" />
+                <ScalarProperty Name="U_BPP_MDTD" ColumnName="U_BPP_MDTD" />
+                <ScalarProperty Name="U_BPV_SERI" ColumnName="U_BPV_SERI" />
+                <ScalarProperty Name="U_BPV_NCON2" ColumnName="U_BPV_NCON2" />
+                <ScalarProperty Name="U_BPP_MDSD" ColumnName="U_BPP_MDSD" />
+                <ScalarProperty Name="U_BPP_MDCD" ColumnName="U_BPP_MDCD" />
+                <ScalarProperty Name="U_BPP_TDOCORG" ColumnName="U_BPP_TDOCORG" />
+                <ScalarProperty Name="U_BPP_MDTO" ColumnName="U_BPP_MDTO" />
+                <ScalarProperty Name="U_BPP_MDSO" ColumnName="U_BPP_MDSO" />
+                <ScalarProperty Name="U_BPP_MDCO" ColumnName="U_BPP_MDCO" />
+                <ScalarProperty Name="U_BPP_SDOCTOTAL" ColumnName="U_BPP_SDOCTOTAL" />
+                <ScalarProperty Name="U_BPP_SDOCDATE" ColumnName="U_BPP_SDOCDATE" />
+                <ScalarProperty Name="U_BPP_SDOCTC" ColumnName="U_BPP_SDOCTC" />
+                <ScalarProperty Name="U_APTOS_TPO_DOCTO" ColumnName="U_APTOS_TPO_DOCTO" />
+                <ScalarProperty Name="U_APTOS_FOLIO_ENICO" ColumnName="U_APTOS_FOLIO_ENICO" />
+                <ScalarProperty Name="U_APTOS_FECHAEMISION" ColumnName="U_APTOS_FECHAEMISION" />
+                <ScalarProperty Name="U_APTOS_HORAEMISION" ColumnName="U_APTOS_HORAEMISION" />
+                <ScalarProperty Name="U_APTOS_COD_VENDEDOR" ColumnName="U_APTOS_COD_VENDEDOR" />
+                <ScalarProperty Name="U_APTOS_NUM_TERMINAL" ColumnName="U_APTOS_NUM_TERMINAL" />
+                <ScalarProperty Name="U_APTOS_MOTIVOCANCELA" ColumnName="U_APTOS_MOTIVOCANCELA" />
+                <ScalarProperty Name="DocTotal" ColumnName="DocTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RCT">
+            <EntityTypeMapping TypeName="PlantillasModel.RCT">
+              <MappingFragment StoreEntitySet="RCT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DocNum1" ColumnName="DocNum1" />
+                <ScalarProperty Name="DoCNum" ColumnName="DoCNum" />
+                <ScalarProperty Name="LineNum" ColumnName="LineNum" />
+                <ScalarProperty Name="DocEntry" ColumnName="DocEntry" />
+                <ScalarProperty Name="SumApplied" ColumnName="SumApplied" />
+                <ScalarProperty Name="InvType" ColumnName="InvType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RIN">
+            <EntityTypeMapping TypeName="PlantillasModel.RIN">
+              <MappingFragment StoreEntitySet="RIN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="LineNum" ColumnName="LineNum" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="U_MNSO_ValorDsco" ColumnName="U_MNSO_ValorDsco" />
+                <ScalarProperty Name="WhsCode" ColumnName="WhsCode" />
+                <ScalarProperty Name="CodeBars" ColumnName="CodeBars" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="LineTotal" ColumnName="LineTotal" />
+                <ScalarProperty Name="PriceBefDi" ColumnName="PriceBefDi" />
+                <ScalarProperty Name="OcrCode" ColumnName="OcrCode" />
+                <ScalarProperty Name="OcrCode2" ColumnName="OcrCode2" />
+                <ScalarProperty Name="OcrCode3" ColumnName="OcrCode3" />
+                <ScalarProperty Name="OcrCode4" ColumnName="OcrCode4" />
+                <ScalarProperty Name="OcrCode5" ColumnName="OcrCode5" />
+                <ScalarProperty Name="NCMCode" ColumnName="NCMCode" />
+                <ScalarProperty Name="UomCode" ColumnName="UomCode" />
+                <ScalarProperty Name="U_tipoOpT12" ColumnName="U_tipoOpT12" />
+                <ScalarProperty Name="U_BPP_OPER" ColumnName="U_BPP_OPER" />
+                <ScalarProperty Name="U_BPP_SUJETORENTA" ColumnName="U_BPP_SUJETORENTA" />
+                <ScalarProperty Name="TaxOnly" ColumnName="TaxOnly" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VPM">
+            <EntityTypeMapping TypeName="PlantillasModel.VPM">
+              <MappingFragment StoreEntitySet="VPM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DocNum1" ColumnName="DocNum1" />
+                <ScalarProperty Name="DoCNum" ColumnName="DoCNum" />
+                <ScalarProperty Name="LineNum" ColumnName="LineNum" />
+                <ScalarProperty Name="DocEntry" ColumnName="DocEntry" />
+                <ScalarProperty Name="SumApplied" ColumnName="SumApplied" />
+                <ScalarProperty Name="InvType" ColumnName="InvType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
